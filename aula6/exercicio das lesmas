@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <iostream>
+#include <iomanip>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    int L;
+    
+    // O loop continua enquanto houver dados para ler (EOF)
+    while (cin >> L) {
+        int maior_velocidade = 0;
+        int velocidade;
+        
+        // Lê a velocidade de cada lesma do grupo
+        for (int i = 0; i < L; i++) {
+            cin >> velocidade;
+            if (velocidade > maior_velocidade) {
+                maior_velocidade = velocidade;
+            }
+        }
+        
+        // Classifica a lesma mais rápida no nível correspondente
+        if (maior_velocidade < 10) {
+            cout << 1 << endl;
+        } else if (maior_velocidade < 20) {
+            cout << 2 << endl;
+        } else {
+            cout << 3 << endl;
+        }
+    }
+    
+    return 0;
+}
